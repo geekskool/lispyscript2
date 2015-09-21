@@ -18,6 +18,18 @@ Just save your LispyScript2 file with the extension '.ls2'
 Run the command in a terminal:
 lispy2 filename.ls2 
 
+## ToDo
+
+* Unit test feature
+* Tail Call Optimization
+* Templates
+* Callback Sequence (avoid nested callbacks)
+* Monads 
+* Run in browser  
+* Server-side and Browser-side REPLs
+
+
+
 ### Contributors
 
 Mansi Shah [eyeplusplus](https://github.com/eyeplusplus).   
