@@ -1,1 +1,8 @@
+;; if-statement syntax is as follows
+;;   (if test (consequence) (alternate))
+
+(if 1 ((console.log "The consq")) ((console.log "the alt")))
+
+(if 0 ((console.log "The consq")) ((console.log "The alt")))
+
 (if (* (* 4 5) (* 2 4)) ((console.log "True")) ((console.log "False")))
