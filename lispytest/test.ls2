@@ -28,9 +28,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Simple Macro Declaration
-; (macro print ()
-; 	(console.log ~...rest))
-; (print "Lets" "print" "a" a)
+(macro print (...rest)
+	(console.log ~...rest))
+ (print "Lets" "print" "a" a)
 ;; Output: console.log("Lets", "print", "a", a);
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
