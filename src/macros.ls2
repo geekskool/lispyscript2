@@ -1,0 +1,39 @@
+(macro do (...rest)
+ ((=> () ~...rest)))
+
+(macro when (cond ...rest)
+ (if ~cond ((do ~...rest)) ()))
+
+(macro unless (cond ...rest)
+ (when (! ~cond) ~...rest))
+
+(macro undefined? (obj)
+ (== (typeof ~obj) "undefined"))
+
+(macro null? (obj)
+ (== ~obj null))
+
+(macro true? (obj)
+ (== true ~obj))
+
+(macro false? (obj)
+ (== false ~obj))
+
+(macro boolean? (obj)
+ (== (typeof ~obj) "boolean"))
+
+(macro zero? (obj)
+ (== ~obj 0))
+
+(macro number? (obj)
+ (== (Object.prototype.toString.call ~obj) "[object Number]"))
+
+(macro string? (obj)
+ (== (Object.prototype.toString.call ~obj) "[object String]"))
+
+(macro array? (obj)
+ (== (Object.prototype.toString.call ~obj) "[object Array]"))
+
+(macro object? (obj)
+ (== (Object.prototype.toString.call ~obj) "[object Object]"))
+
