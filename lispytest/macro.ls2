@@ -1,12 +1,33 @@
-(macro do (...rest)
-	((=> () ~...rest)))
-
-(macro when (cond ...rest)
-  (if ~cond ((do ~...rest)) ()))
-
-(macro unless (cond ...rest)
-  (when (! ~cond) ~...rest))
+(do (console.log 10) (console.log "Yay!"))
 
 (when true (var a 5) (console.log a))
 
 (unless false (console.log "Its too small!"))
+
+(var z false)
+
+(undefined? z)
+
+(null? z)
+
+(false? z)
+
+(true? z)
+
+(boolean? z)
+
+(var x 5)
+
+(zero? x)
+
+(number? x)
+
+(var y "hey")
+
+(string? y)
+
+(array? y)
+
+(object? y)
+
+
