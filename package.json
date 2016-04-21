@@ -23,5 +23,8 @@
   "dependencies": {
     "escodegen": "^1.6.1",
     "format-json": "^1.0.3"
+  },
+  "devDependencies": {
+    "mkdirpd": "^0.1.8"
   }
 }
