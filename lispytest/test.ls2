@@ -24,7 +24,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Variable declaration with arrow function expr
 (var a (=> () 5))
-;; Output: var a = () => { return 5;	};
+;; Output: var a = () => { return 5;};
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Simple Macro Declaration

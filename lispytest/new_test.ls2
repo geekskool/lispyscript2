@@ -1,0 +1,137 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;TEST CASES FOR LISPYSCRIPT2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 0;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; macro to print a line
+(macro print (...rest)
+	(console.log ~...rest))
+
+
+(print "=======================  Testing lispifyscript2  ============================")
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 1;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Variable declaration and If statement
+
+(var a 5)
+(if (== a 5) ((console.log "Passed test 1")) ((console.log "Failed test 1")))
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 2;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Variable declaration with arrow function expr
+
+(var x (=> () 5))
+(if (== (x) 5) ((console.log "Passed test 2")) ((console.log "Failed test 2")))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 3;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Function declaration and function call 
+
+(function abc (x) (var newVar (* x 10)) newVar) 
+(var r (abc 5))
+(if (== r 50) ((console.log "Passed test 3")) ((console.log "Failed test 3")))
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 4;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Function returning a function
+
+(function foo () (=> () true) )
+(var cond (foo))
+(if (cond) ((console.log "Passed test 4")) ((console.log "Failed test 4")))
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 5;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Testing arrays
+
+(var arrVar (=> () [(abc 2) (* 3 4) "test" 5 3]))
+(if (arrVar) ((console.log "Passed test 5")) ((console.log "Failed test 5")))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 6;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Testing objects
+
+(var objVar (=> () {a: 5, b: 4}))
+(if (objVar) ((console.log "Passed test 6")) ((console.log "Failed test 6")))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 7;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call for "do"
+
+(do (console.log "Passed test 7"))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 8;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call for "when"
+
+(when true (var a "Passed test 8") (console.log a))
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 9;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call for "undefined?"
+
+(var z false)
+(if (undefined? z) ((console.log "Failed test 9")) ((console.log "Passed test 9")))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 10;;;;;;;;;;;;;;;;;;;;;;;;;;;;			
+;;Macro Call for "null?"
+
+(if (null? z) ((console.log "Failed test 10")) ((console.log "Passed test 10")))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 11;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;Macro Call for "false?"
+
+(if (false? z) ((console.log "Passed test 11")) ((console.log "Failed test 11")))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 12;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
+;;Macro Call for "true?"
+
+(if (true? z) ((console.log "Failed test 12")) ((console.log "Passed test 12")))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 13;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+;;Macro Call for "boolean?"
+
+(if (boolean? z) ((console.log "Failed test 13")) ((console.log "Passed test 13")))
+(print "==================================")
+
+
+;;;;;;;;;;;;;;;;;;;;;;Test 14;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call for "zero?"
+
+(var x 5)
+(if (zero? x) ((console.log "Failed test 14")) ((console.log "Passed test 14")))
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 15;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call for "number?"
+
+(if (number? x) ((console.log "Passed test 15")) ((console.log "Failed test 15")))
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 16;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call for "string?"
+
+(var y "hey")		
+(if (string? y) ((console.log "Passed test 16")) ((console.log "Failed test 16")))
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 17;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call for "object?"
+(if (object? y) ((console.log "Failed test 17")) ((console.log "Passed test 17")))
+
+
+(print "=====================All Test Cases Successfully Passed=============================")
