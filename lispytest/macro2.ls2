@@ -1,5 +1,0 @@
-(do (console.log 10) (console.log "Yay!"))
-
-(when true (var a 5) (console.log a))
-
-(unless false (console.log "Its too small!"))
