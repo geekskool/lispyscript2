@@ -8,7 +8,7 @@
  (when (! ~cond) ~...rest))
 
 (macro undefined? (obj)
- (== (typeof ~obj) "undefined"))
+ (=== (typeof ~obj) undefined))
 
 (macro null? (obj)
  (== ~obj null))
@@ -32,8 +32,7 @@
  (== (Object.prototype.toString.call ~obj) "[object String]"))
 
 (macro array? (obj)
- (== (Object.prototype.toString.call ~obj) "[object Array]"))
+ (== (Array.isArray ~obj) true))
 
 (macro object? (obj)
  (== (Object.prototype.toString.call ~obj) "[object Object]"))
-
