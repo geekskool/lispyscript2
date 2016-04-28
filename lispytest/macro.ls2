@@ -6,28 +6,28 @@
 
 (var z false)
 
-(undefined? z)
+(console.log (undefined? z))
 
-(null? z)
+(console.log (null? z))
 
-(false? z)
+(console.log (false? z))
 
-(true? z)
+(console.log (true? z))
 
-(boolean? z)
+(console.log (boolean? z))
 
 (var x 5)
 
-(zero? x)
+(console.log (zero? x))
 
-(number? x)
+(console.log (number? x))
 
 (var y "hey")
 
-(string? y)
+(console.log (string? y))
 
-(array? y)
+(console.log (array? y))
 
-(object? y)
+(console.log (object? y))
 
 
