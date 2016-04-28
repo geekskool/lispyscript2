@@ -131,7 +131,15 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;Test 17;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;Macro Call for "object?"
+
 (if (object? y) ((console.log "Failed test 17")) ((console.log "Passed test 17")))
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 18;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call for "array?"
+
+(var val (=> () [1 2 3 4 5]))
+(if (array? val) ((console.log "Failed test 18")) ((console.log "Passed test 18")))
 
 
 (print "=====================All Test Cases Successfully Passed=============================")
