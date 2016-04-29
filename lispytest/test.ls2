@@ -17,14 +17,14 @@
 ;; Variable declaration and If statement
 
 (var a 5)
-(if (== a 5) ((console.log "Passed test 1")) ((console.log "Failed test 1")))
+(if (= a 5) ((console.log "Passed test 1")) ((console.log "Failed test 1")))
 (print "==================================")
 
 ;;;;;;;;;;;;;;;;;;;;;;Test 2;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Variable declaration with arrow function expr
 
 (var x (=> () 5))
-(if (== (x) 5) ((console.log "Passed test 2")) ((console.log "Failed test 2")))
+(if (= (x) 5) ((console.log "Passed test 2")) ((console.log "Failed test 2")))
 (print "==================================")
 
 
@@ -33,7 +33,7 @@
 
 (function abc (x) (var newVar (* x 10)) newVar) 
 (var r (abc 5))
-(if (== r 50) ((console.log "Passed test 3")) ((console.log "Failed test 3")))
+(if (= r 50) ((console.log "Passed test 3")) ((console.log "Failed test 3")))
 (print "==================================")
 
 ;;;;;;;;;;;;;;;;;;;;;;Test 4;;;;;;;;;;;;;;;;;;;;;;;;;;;;

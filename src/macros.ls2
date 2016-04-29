@@ -1,3 +1,9 @@
+;; List of built in macros for LispyScript2. This file is included by
+;; default by the LispyScript compiler.
+
+;;;;;;;;;;;;;;;;;;;;;;; Expressions ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (macro do (...rest)
  ((=> () ~...rest)))
 
@@ -7,32 +13,37 @@
 (macro unless (cond ...rest)
  (when (! ~cond) ~...rest))
 
+
+ ;;;;;;;;;;;;;;;;;;;;;; Conditionals ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (macro undefined? (obj)
- (=== (typeof ~obj) undefined))
+ (= (typeof ~obj) "undefined"))
+
 
 (macro null? (obj)
- (== ~obj null))
+ (= ~obj null))
 
 (macro true? (obj)
- (== true ~obj))
+ (= true ~obj))
 
 (macro false? (obj)
- (== false ~obj))
+ (= false ~obj))
 
 (macro boolean? (obj)
- (== (typeof ~obj) "boolean"))
+ (= (typeof ~obj) "boolean"))
 
 (macro zero? (obj)
- (== ~obj 0))
+ (= ~obj 0))
 
 (macro number? (obj)
- (== (Object.prototype.toString.call ~obj) "[object Number]"))
+ (= (Object.prototype.toString.call ~obj) "[object Number]"))
 
 (macro string? (obj)
- (== (Object.prototype.toString.call ~obj) "[object String]"))
+ (= (Object.prototype.toString.call ~obj) "[object String]"))
 
 (macro array? (obj)
- (== (Array.isArray ~obj) true))
+ (= (Array.isArray ~obj) true))
 
 (macro object? (obj)
- (== (Object.prototype.toString.call ~obj) "[object Object]"))
+ (= (Object.prototype.toString.call ~obj) "[object Object]"))
