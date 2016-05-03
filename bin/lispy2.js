@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-require('../lib/command')
+require('babel-register')({
+   presets: [ 'es2015' ]
+});
 
-//import from '../lib/command'
+require('../lib/command')
