@@ -1,2 +1,5 @@
 # lispyscript2
+.gitignore
 node_modules
+lispytest/test2.ls2
+
