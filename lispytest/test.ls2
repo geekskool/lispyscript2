@@ -141,5 +141,12 @@
 (var val (=> () [1 2 3 4 5]))
 (if (array? val) ((console.log "Failed test 18")) ((console.log "Passed test 18")))
 
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 19;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call 'cond'
+
+(var z 10)
+(cond (< z 0) ((console.log "Failed test 19")) (null? z) ((console.log "Failed test 19")) (> z 0) ((console.log "Passed test 19")))
 
 (print "=====================All Test Cases Successfully Passed=============================")
