@@ -3,6 +3,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;; Expressions ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;(macro2 macroEval (macro ...param)
+;;((=> () (~macro ~...param))))
 
 (macro do (...rest)
  ((=> () ~...rest)))
@@ -13,18 +15,14 @@
 (macro unless (cond ...rest)
  (when (! ~cond) ~...rest))
 
-;;(macro cond (...rest)
-;; (if (#args-shift ...rest) (#args-shift ...rest) (#args-if ...rest (cond ~...rest))))
-
-;;(macro cond (...rest)
-;;(if (#args-cond) (#args-eval ...rest) (cond ~...rest)))
+(macro cond (cond eval ...rest)
+(if ~cond ~eval ((cond ~...rest))))
 
  ;;;;;;;;;;;;;;;;;;;;;; Conditionals ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 (macro undefined? (obj)
  (= (typeof ~obj) "undefined"))
-
 
 (macro null? (obj)
  (= ~obj null))
