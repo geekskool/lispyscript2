@@ -12,7 +12,6 @@
 (print "=======================  Testing lispifyscript2  ============================")
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;Test 1;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Variable declaration and If statement
 
@@ -36,12 +35,13 @@
 (if (= r 50) ((console.log "Passed test 3")) ((console.log "Failed test 3")))
 (print "==================================")
 
+
 ;;;;;;;;;;;;;;;;;;;;;;Test 4;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Function returning a function
 
 (function foo () (=> () true) )
-(var cond (foo))
-(if (cond) ((console.log "Passed test 4")) ((console.log "Failed test 4")))
+(var condition (foo))
+(if (condition) ((console.log "Passed test 4")) ((console.log "Failed test 4")))
 (print "==================================")
 
 ;;;;;;;;;;;;;;;;;;;;;;Test 5;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -141,5 +141,12 @@
 (var val (=> () [1 2 3 4 5]))
 (if (array? val) ((console.log "Failed test 18")) ((console.log "Passed test 18")))
 
+(print "==================================")
+
+;;;;;;;;;;;;;;;;;;;;;;Test 19;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Macro Call 'cond'
+
+(var z 10)
+(cond (< z 0) ((console.log "Failed test 19")) (null? z) ((console.log "Failed test 19")) (> z 0) ((console.log "Passed test 19")) true ((console.log "Failed test 19")))
 
 (print "=====================All Test Cases Successfully Passed=============================")
