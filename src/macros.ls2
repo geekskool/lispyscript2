@@ -27,9 +27,6 @@
 (macro null? (obj)
  (= ~obj null))
 
-;;(macro empty? (obj)
-;;(null? ~obj[0]))
-
 (macro true? (obj)
  (= true ~obj))
 
