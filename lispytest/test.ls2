@@ -40,8 +40,8 @@
 ;; Function returning a function
 
 (function foo () (=> () true) )
-(var cond (foo))
-(if (cond) ((console.log "Passed test 4")) ((console.log "Failed test 4")))
+(var condition (foo))
+(if (condition) ((console.log "Passed test 4")) ((console.log "Failed test 4")))
 (print "==================================")
 
 ;;;;;;;;;;;;;;;;;;;;;;Test 5;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -147,6 +147,6 @@
 ;;Macro Call 'cond'
 
 (var z 10)
-(cond (< z 0) ((console.log "Failed test 19")) (null? z) ((console.log "Failed test 19")) (> z 0) ((console.log "Passed test 19")))
+(cond (< z 0) ((console.log "Failed test 19")) (null? z) ((console.log "Failed test 19")) (> z 0) ((console.log "Passed test 19")) true ((console.log "Failed test 19")))
 
 (print "=====================All Test Cases Successfully Passed=============================")

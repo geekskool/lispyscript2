@@ -3,6 +3,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;; Expressions ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;(macro2 macroEval (macro ...param)
+;;((=> () (~macro ~...param))))
 
 (macro do (...rest)
  ((=> () ~...rest)))
@@ -22,9 +24,11 @@
 (macro undefined? (obj)
  (= (typeof ~obj) "undefined"))
 
-
 (macro null? (obj)
  (= ~obj null))
+
+;;(macro empty? (obj)
+;;(null? ~obj[0]))
 
 (macro true? (obj)
  (= true ~obj))
